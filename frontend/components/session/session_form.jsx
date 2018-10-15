@@ -26,43 +26,59 @@ class SessionForm extends React.Component {
       .then(() => this.props.history.push('/')); //renders a new page if the signup works
   }
 
+  renderNameInput() {
+    if (this.props.formType === "Sign up") {
+      return (
+        <div>
+        <label>
+          First Name
+          <input className="input-login"
+            type="text"
+            value={this.state.first_name}
+            onChange={this.handleInput('first_name')}
+          />
+        </label>
+          <label>
+            Last Name
+            <input className="input-login"
+              type="text"
+              value={this.state.last_name}
+              onChange={this.handleInput('last_name')}
+            />
+          </label>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
   render(){
     return (
       <div className="session-form" id="login">
-        <img src={window.images.login}/>
+        <img className="oc-logo" src={window.images.login}/>
         <div className="session-form-white">
-        <h2>{this.props.formType} {this.props.preposition} OfficeCamp</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label> Email or username
-            <input className="input-login"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-            />
-          </label>
-          <label> First Name:
-            <input className="input-login"
-              type="text"
-              value={this.state.first_name}
-              onChange={this.handleInput('first_name')}
-            />
-          </label>
-            <label> Last Name:
-              <input className="input-login"
-                type="text"
-                value={this.state.last_name}
-                onChange={this.handleInput('last_name')}
-              />
+        <h2 className="session-form-header">{this.props.formType} {this.props.preposition} OfficeCamp</h2>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+                Email or username
+                <input className="input-login"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleInput('email')}
+                />
             </label>
-            <label> Password:
-              <input className="input-login"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInput('password')}
-              />
-            </label>
-          <button className="login-button">{this.props.formType}</button>
-        </form>
+            {this.renderNameInput()}
+            <label>
+                Password
+                <input className="input-login"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInput('password')}
+                />
+              </label>
+            <button className="login-button">{this.props.formType}</button>
+          </form>
         </div>
       </div>
     );

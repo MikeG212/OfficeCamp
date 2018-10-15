@@ -19,11 +19,12 @@ import LoginContainer from './session/login_container';
 const App = () => (
   <div>
     <header>
-      <Route path="/" component={NavBarContainer} />
     </header>
     <Switch>
-      <Route path="/login" component={LoginContainer} />
-      <AuthRoute path="/signup" component={SignupContainer} />
+      <Route exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/signup" component={SignupContainer} />
+      <Route exact path="/" component={NavBarContainer} />
+      <Redirect to="/"/>
     </Switch>
   </div>
 )
