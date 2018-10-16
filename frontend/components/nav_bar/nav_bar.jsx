@@ -16,7 +16,7 @@ export default ({ currentUser, logout}) => {
 
   return (
     <header className="nav-bar">
-      <h1 className="logo">OfficeCamp</h1>
+      <img className="nav-bar-logo" src={window.images.login}/>
       <div>
        { display }
        </div>

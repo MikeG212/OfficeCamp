@@ -21,10 +21,10 @@ const App = () => (
     <header>
     </header>
     <Switch>
-      <Route exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <Route exact path="/" component={NavBarContainer} />
-      <Redirect to="/"/>
+      <Redirect to="/" />
     </Switch>
   </div>
 )
