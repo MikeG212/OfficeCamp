@@ -30,10 +30,20 @@ class SessionForm extends React.Component {
       .then(() => this.props.history.push('/')); //renders a new page if the signup works
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   renderErrors() {
-    if (this.props.errors) {
-      return this.props.errors;
-    } 
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   renderLink() {
