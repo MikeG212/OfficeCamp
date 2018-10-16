@@ -11,10 +11,10 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const createNewUser = formUser => dispatch => (
   postUser(formUser)
   .then(serverUser => dispatch(receiveCurrentUser(serverUser))
-  ), err => (
+, err => (
     dispatch(receiveErrors(err.responseJSON))
   )
-);
+));
 
 export const login = formUser => dispatch => (
   postSession(formUser)
