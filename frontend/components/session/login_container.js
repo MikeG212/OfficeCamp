@@ -6,8 +6,9 @@ import SessionForm from './session_form';
 
 const mapStateToProps = (state) => {
   const formType = "Log in";
-  const preposition = "to"
-  return { formType, preposition };
+  const preposition = "to";
+  const errors = state.errors.session;
+  return { formType, preposition, errors };
 };
 
 const mapDispatchToProps = dispatch => {

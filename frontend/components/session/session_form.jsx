@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.renderDemoLoginButton = this.renderDemoLoginButton.bind(this);
+    this.renderNameInput = this.renderNameInput.bind(this);
+    this.renderLink = this.renderLink.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleInput(type) {
@@ -24,6 +28,14 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.action(this.state)
       .then(() => this.props.history.push('/')); //renders a new page if the signup works
+  }
+
+  renderErrors() {
+    if (this.props.errors) {
+      return this.props.errors;
+    } else {
+      return "";
+    }
   }
 
   renderLink() {
@@ -45,11 +57,18 @@ class SessionForm extends React.Component {
   demoLogin() {
     this.setState({
         email: 'mscott@dundermifflin.com',
-        password: 'starwars',
-      },
-      function(){this.props.action(this.state)
-        .then(() => this.props.history.push('/'));
-    });
+        password: 'starwars'
+      }, ()=>this.props.action(this.state)
+        .then(() => this.props.history.push('/'))
+      );
+  }
+
+  renderDemoLoginButton() {
+    if (this.props.formType === "Log in") {
+      return (<button onClick={() => this.demoLogin()} className="demo-button">Demo Login</button>);
+    } else {
+      return null;
+    }
   }
 
   renderNameInput() {
@@ -103,10 +122,11 @@ class SessionForm extends React.Component {
                   onChange={this.handleInput('password')}
                 />
               </label>
+            <div className="errors">{this.renderErrors()}</div>
             <button className="login-button">{this.props.formType}</button>
             {this.renderLink()}
           </form>
-          <button onClick={() => this.demoLogin()} className="demo-button">Demo Login</button>
+          {this.renderDemoLoginButton()}
         </div>
       </div>
     );
