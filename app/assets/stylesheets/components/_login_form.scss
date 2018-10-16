@@ -1,7 +1,11 @@
+.session-form-container {
+	background: $background-color;
+	height: 1000px;
+}
+
 .session-form {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid black;
 	font-size: 17px;
 	line-height: 1.4;
 	font-family: sans-serif;
@@ -77,8 +81,12 @@
 }
 
 .form-redirect {
-	color: blue;
+	color: #1b6ac9;
+	margin-top: 20px;
 	text-decoration: underline;
+	font-size: 80%;
+	display: block;
+	text-align: center;
 }
 
 .demo-button {

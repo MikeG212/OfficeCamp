@@ -50,13 +50,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Sign up") {
       return (
         <div>
-         <Link className="form-redirect" to="/login">Login</Link>
+         <Link className="form-redirect" to="/login">Already have an account? Login</Link>
         </div>
       );
     } else {
       return (
         <div>
-         <Link className="form-redirect" to="/signup">Sign up</Link>
+         <Link className="form-redirect" to="/signup">Need to set up an account? Sign up</Link>
         </div>
       );
     }
@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
 
   renderDemoLoginButton() {
     if (this.props.formType === "Log in") {
-      return (<button onClick={() => this.demoLogin()} className="demo-button">Demo Login</button>);
+      return (<button onClick={() => this.demoLogin()} className="login-button">Demo Login</button>);
     } else {
       return null;
     }
@@ -108,33 +108,35 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-      <div className="session-form" id="login">
-        <img className="oc-logo" src={window.images.login}/>
-        <div className="session-form-white">
-        <h2 className="session-form-header">{this.props.formType} {this.props.preposition} OfficeCamp</h2>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-                Email or username
-                <input className="input-login"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.handleInput('email')}
-                />
-            </label>
-            {this.renderNameInput()}
-            <label>
-                Password
-                <input className="input-login"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleInput('password')}
-                />
+      <div className="session-form-container">
+        <div className="session-form" id="login">
+          <img className="oc-logo" src={window.images.login}/>
+          <div className="session-form-white">
+          <h2 className="session-form-header">{this.props.formType} {this.props.preposition} OfficeCamp</h2>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                  Email or username
+                  <input className="input-login"
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleInput('email')}
+                  />
               </label>
-            <div className="errors">{this.renderErrors()}</div>
-            <button className="login-button">{this.props.formType}</button>
-            {this.renderLink()}
-          </form>
-          {this.renderDemoLoginButton()}
+              {this.renderNameInput()}
+              <label>
+                  Password
+                  <input className="input-login"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleInput('password')}
+                  />
+                </label>
+              <div className="errors">{this.renderErrors()}</div>
+              <button className="login-button">{this.props.formType}</button>
+              {this.renderDemoLoginButton()}
+            </form>
+          </div>
+          {this.renderLink()}
         </div>
       </div>
     );
