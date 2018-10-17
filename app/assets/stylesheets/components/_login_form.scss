@@ -29,7 +29,7 @@
 	background-color: white;
 	width: 50%;
 	max-width: 380px;
-	max-height: 300px;
+	max-height: 318px;
 	height: auto;
 	padding: 30px;
 	margin-left: auto;
@@ -37,6 +37,7 @@
 	border-radius: 4px;
 	display: block;
 	font-weight: bold;
+	box-shadow: 0 1px 3px 0 #bfbfbf;
 
 }
 
@@ -69,6 +70,8 @@
 .session-form-header {
 	display: flex;
 	justify-content: center;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 
 .input-login {
