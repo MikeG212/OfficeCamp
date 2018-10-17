@@ -27,11 +27,12 @@
 
 .session-form-white {
 	background-color: white;
+	padding: 30px;
 	width: 50%;
 	max-width: 380px;
 	max-height: 318px;
 	height: auto;
-	padding: 30px;
+	padding-right: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 4px;
@@ -66,7 +67,7 @@
 	font-family: sans-serif;
 	font-size: 17px;
 	text-align: center;
-	width: 100%;
+	width: 97%;
 	margin-bottom: 15px;
 }
 
@@ -79,7 +80,7 @@
 
 .input-login {
 	display: inline-block;
-	width: 100%;
+	width: 97%;
 	height: 42px;
 	border: 1px solid #bfbfbf;
 	font-size: 16px;
@@ -100,6 +101,7 @@
 
 .demo-button {
 	color: blue;
+	width: 97%;
 	text-decoration: underline;
 	font-weight: bold;
 	font-size: 17px;
