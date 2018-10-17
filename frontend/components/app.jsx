@@ -13,17 +13,18 @@ import {
  } from '../util/route_util';
 
 import SignupContainer from './session/signup_container';
-import NavBarContainer from './nav_bar/nav_bar_container';
+import HomeContainer from './home/home_container';
 import LoginContainer from './session/login_container';
 
 const App = () => (
   <div>
     <header>
     </header>
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
-      <Route exact path="/" component={NavBarContainer} />
+      <Route exact path="/" component={HomeContainer} />
       <Redirect to="/" />
     </Switch>
   </div>
