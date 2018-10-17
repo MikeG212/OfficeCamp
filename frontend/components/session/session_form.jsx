@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
     this.renderNameInput = this.renderNameInput.bind(this);
     this.renderLink = this.renderLink.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.renderFormId = this.renderFormId.bind(this);
   }
 
   handleInput(type) {
@@ -79,6 +80,11 @@ class SessionForm extends React.Component {
     }
   }
 
+  renderFormId() {
+    if (this.props.formType === "Sign up") return "sign-up";
+    return "log-in";
+  }
+
   renderNameInput() {
     if (this.props.formType === "Sign up") {
       return (
@@ -109,9 +115,9 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className="session-form-container">
-        <div className="session-form" id="login">
+        <div className="session-form">
           <img className="oc-logo" src={window.images.login}/>
-          <div className="session-form-white">
+          <div className="session-form-white" id={this.renderFormId()}>
           <h2 className="session-form-header">{this.props.formType} {this.props.preposition} OfficeCamp</h2>
             <form onSubmit={this.handleSubmit}>
               <label>
