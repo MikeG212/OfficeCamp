@@ -1,0 +1,43 @@
+.home_container {
+  background: $background-color;
+  height: 1000px;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+}
+
+.initials{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  width: 30px;
+}
+
+.logout-button {
+
+}
+
+.btn {
+
+}
+
+.nav-bar {
+
+}
+.nav-bar-logo {
+
+}
+
+.trial-banner {
+  max-width: none;
+  margin: 0 auto;
+  background: #725ead;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+  font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+}

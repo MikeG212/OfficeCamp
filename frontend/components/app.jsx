@@ -25,7 +25,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
-      <AuthRoute path="/todos" component={TodoListContainer} />
+      <Route exact path="/todos" component={TodoListContainer} />
 
       <Route exact path="/" component={HomeContainer} />
       <Redirect to="/" />

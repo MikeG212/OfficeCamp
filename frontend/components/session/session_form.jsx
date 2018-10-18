@@ -64,7 +64,6 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    debugger
     this.setState({
         email: 'mscott@dundermifflin.com',
         password: 'starwars'
