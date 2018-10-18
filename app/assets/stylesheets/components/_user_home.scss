@@ -24,10 +24,17 @@
 }
 
 .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
 }
 .nav-bar-logo {
-
+    display: flex;
+    justify-content: flex-start;
+    height: 39px;
+    width: 85px;
+    background: transparent;
 }
 
 .trial-banner {

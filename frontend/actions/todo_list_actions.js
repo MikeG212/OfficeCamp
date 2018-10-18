@@ -3,6 +3,7 @@ import * as TodoListAPIUtil from '../util/todo_list_util';
 export const RECEIVE_TODO_LISTS = "RECEIVE_TODO_LISTS";
 export const RECEIVE_TODO_LIST = "RECEIVE_TODO_LIST";
 export const REMOVE_TODO_LIST = "REMOVE_TODO_LIST";
+export const TODO_ERROR = "TODO_ERROR";
 
 export const requestTodoLists = () => (dispatch) => (
   TodoListAPIUtil.fetchTodoLists()
@@ -43,3 +44,8 @@ const removeTodoList = (todoListId) => ({
   type: REMOVE_TODO_LIST,
   todoListId
 });
+
+export const todoListError = error => ({
+  type: TODO_LIST_ERROR,
+  error
+})
