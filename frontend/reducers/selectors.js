@@ -1,6 +1,10 @@
 export const allTodos = ({ todos }) => Object.keys(todos).map(id => todos[id]);
 
-export const allTodoLists = ({ todoLists }) => Object.keys(todoLists).map(id => todoLists[id]);
+export const allTodoLists = ( todoLists ) => {
+  console.log(todoLists)
+  return Object.keys(todoLists).map(id => todoLists[id]);
+
+}
 
 
 export const stepsByTodoId = ({ steps }, todo_id) => {
