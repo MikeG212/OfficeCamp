@@ -18,12 +18,15 @@ import LoginContainer from './session/login_container';
 import TodoListContainer from './todo_list/todo_list_container';
 
 const App = () => (
-  <div>
+  <div className="app">
     <header>
     </header>
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
+      <AuthRoute path="/todos" component={TodoListContainer} />
+      <AuthRoute path="/messages" component={MeesageContainer} />
 
       <Route exact path="/" component={HomeContainer} />
       <Redirect to="/" />
