@@ -1,24 +1,11 @@
-# README
+# OfficeCamp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://office-camp.herokuapp.com/#/)
+OfficeCamp is a project management website, inspired by BaseCamp.  It uses Rails and PostgreSQL for the backend and React.js and Redux for the frontend.
 
-Things you may want to cover:
+It was designed and built within two weeks, and I plan to continue to teak it over time.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Possible Future Features
+  * Events calendar
+  * Todo List
+  * Message Board
