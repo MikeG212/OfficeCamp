@@ -3,17 +3,20 @@ import TodoList from './todo_list';
 import TodoListIndex from './todo_list_index';
 
 // Actions
-import { receiveTodoLists, receiveTodoList } from '../../actions/todo_list_actions';
+import { requestTodoLists, requestTodoList, createTodoList, updateTodoList, deleteTodoList } from '../../actions/todo_list_actions';
 import { allTodoLists } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   todoLists: allTodoLists(state),
-  state
+  errors: state.errors
 });
 
 const mapDispatchToProps = dispatch => ({
-  receiveTodoList: todoList => dispatch(receiveTodoList(todoList)),
-  receiveTodoLists: todoLists => dispatch(receiveTodoLists(todoLists))
+  requestTodoLists: () => dispatch(requestTodoLists()),
+  requestTodoList: todoList => dispatch(requestTodoList(todoList)),
+  createTodoList: todoList => dispatch(createTodoList(todoList)),
+  updateTodoList: todoList => dispatch(updateTodoList(todoList)),
+  deleteTodoList: todoList => dispatch(deleteTodoList(todoList))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoListIndex);

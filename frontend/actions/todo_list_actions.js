@@ -5,10 +5,12 @@ export const RECEIVE_TODO_LIST = "RECEIVE_TODO_LIST";
 export const REMOVE_TODO_LIST = "REMOVE_TODO_LIST";
 export const TODO_ERROR = "TODO_ERROR";
 
-export const requestTodoLists = () => (dispatch) => (
+export const requestTodoLists = () => (dispatch) => {
+  //debugger;
+  return(
   TodoListAPIUtil.fetchTodoLists()
     .then(todoLists => dispatch(receiveTodoLists(todoLists)))
-);
+)};
 
 export const requestTodoList = (todoList) => (dispatch) => (
   TodoListAPIUtil.fetchTodoList(todoList)

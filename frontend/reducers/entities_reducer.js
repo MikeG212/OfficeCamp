@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import session from './session_reducer';
+import todoLists from './todo_lists_reducer';
+
 
 export default combineReducers({
-  session,
+  todoLists
 });

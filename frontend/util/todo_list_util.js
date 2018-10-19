@@ -1,25 +1,25 @@
-export const fetchTodos = () => (
+export const fetchTodoLists = () => (
   $.ajax({
     method: 'GET',
     url: 'api/todos'
   })
 );
 
-export const fetchTodo = (id) => (
+export const fetchTodoList = (id) => (
   $.ajax({
     method: 'GET',
     url: `api/todos/${id}`
   })
 );
 
-export const deleteTodo = (id) => (
+export const deleteTodoList = (id) => (
   $.ajax({
     method: 'DELETE',
     url: `api/todos/${id}`
   })
 );
 
-export const updateTodo = (todo) => (
+export const updateTodoList = (todo) => (
   $.ajax({
     method: 'PATCH',
     url: `api/todos/${todo.id}`,

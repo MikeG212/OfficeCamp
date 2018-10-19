@@ -17,8 +17,6 @@ import HomeContainer from './home/home_container';
 import LoginContainer from './session/login_container';
 import TodoListIndexContainer from './todo_list/todo_list_index_container';
 
-debugger
-
 const App = () => (
   <div className="app">
     <header>

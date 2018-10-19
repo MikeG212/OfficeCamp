@@ -1,8 +1,11 @@
-export const allTodos = ({ todos }) => Object.keys(todos).map(id => todos[id]);
+export const allTodos = (state) => {
+  //debugger
+  return Object.values(state.todos);
+}
 
-export const allTodoLists = ( todoLists ) => {
-  console.log(todoLists)
-  return Object.keys(todoLists).map(id => todoLists[id]);
+export const allTodoLists = (state) => {
+  //debugger
+  return Object.values(state.entities.todoLists);
 
 }
 

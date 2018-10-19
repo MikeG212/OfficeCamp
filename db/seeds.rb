@@ -7,5 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 demoUser = User.create(first_name: 'Michael', last_name: 'Scott', email: 'mscott@dundermifflin.com', password: 'starwars');
-demoTodoList1 = User.create(name: 'Plan Birthday Party', description: 'We\'re throwing a birthday party on Friday during lunch', user_id: 1);
-demoTodoList2 = User.create(name: 'Plan Diversity Training', description: 'My diversity training seminar. (much better than Toby\'s)', user_id: 1);
+demoTodoList1 = TodoList.create(name: 'Plan Birthday Party', description: 'We\'re throwing a birthday party on Friday during lunch', user_id: 1);
+demoTodoList2 = TodoList.create(name: 'Plan Diversity Training', description: 'My diversity training seminar.', user_id: 1);
+demoTodo = Todo.create(name: 'Get cake', description: 'Go to store, buy cake', list_id: 1, user_id: 1, completed: true);

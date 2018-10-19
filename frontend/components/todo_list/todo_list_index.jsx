@@ -4,14 +4,23 @@ import TodoList from './todo_list';
 import TodoForm from './todo_form';
 
 class TodoListIndex extends React.Component {
+  componentDidMount() {
+    //debugger
+    this.props.requestTodoLists();
+    //debugger
+  }
 
   render() {
-    const { todoLists, receiveTodoLists } = this.props;
-    const allTodoLists = todoLists.map(todo => (
+    const { todoLists, requestTodoLists, requestTodoList, createTodoList, updateTodoList, deleteTodoList } = this.props;
+      //debugger
+    if (!this.props.todoLists) {
+      return null;
+    }
+    const allTodoLists = todoLists.map(todoList => (
         <TodoList
-          key={`todo-list${todo_list.id}`}
+          key={`todo-list${todoList.id}`}
           todoList={todoList}
-          receiveTodoLists={ receiveTodoLists } />
+          updateTodoList={ updateTodoList } />
       )
     );
 
@@ -20,7 +29,7 @@ class TodoListIndex extends React.Component {
         <ul className="todo-lists">
           { allTodoLists }
         </ul>
-        <TodoList receiveTodoList={ receiveTodoList }/>
+        <TodoForm createTodoList={ createTodoList } />
       </div>
     );
   }
