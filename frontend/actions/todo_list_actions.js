@@ -6,7 +6,7 @@ export const REMOVE_TODO_LIST = "REMOVE_TODO_LIST";
 export const TODO_ERROR = "TODO_ERROR";
 
 export const requestTodoLists = () => (dispatch) => {
-  //debugger;
+  debugger;
   return(
   TodoListAPIUtil.fetchTodoLists()
     .then(todoLists => dispatch(receiveTodoLists(todoLists)))

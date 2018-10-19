@@ -5,14 +5,14 @@ import TodoForm from './todo_form';
 
 class TodoListIndex extends React.Component {
   componentDidMount() {
-    //debugger
+    debugger
     this.props.requestTodoLists();
-    //debugger
+    debugger
   }
 
   render() {
     const { todoLists, requestTodoLists, requestTodoList, createTodoList, updateTodoList, deleteTodoList } = this.props;
-      //debugger
+      debugger
     if (!this.props.todoLists) {
       return null;
     }

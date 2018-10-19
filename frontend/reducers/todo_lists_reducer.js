@@ -4,21 +4,21 @@ import { RECEIVE_TODO_LISTS,
          TODO_LIST_ERROR } from '../actions/todo_list_actions';
 import merge from 'lodash/merge';
 
-const todosReducer = (state = {}, action) => {
+const todoListsReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = {};
   switch(action.type){
     case RECEIVE_TODO_LISTS:
-      action.todos.forEach( todo => {
-        nextState[todo_list.id] = todo_list;
+      action.todoLists.forEach( todoList => {
+        nextState[todoList.id] = todoList;
       });
       return nextState;
     case RECEIVE_TODO_LIST:
-      const newTodoList = {[action.todo_list.id]: action.todo_list};
+      const newTodoList = {[action.todoList.id]: action.todoList};
       return merge({}, state, newTodoList);
     case REMOVE_TODO_LIST:
       nextState = merge({}, state);
-      delete nextState[action.todo_list.id];
+      delete nextState[action.todoList.id];
       return nextState;
     case TODO_LIST_ERROR:
       alert(action.error);
@@ -27,4 +27,4 @@ const todosReducer = (state = {}, action) => {
   }
 };
 
-export default todosReducer;
+export default todoListsReducer;

@@ -26,11 +26,11 @@ export const todoError = error => ({
   error
 })
 
-export const fetchTodos = () => dispatch => (
+export const requestTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))
 );
 
-export const fetchTodo = id => dispatch => (
+export const requestTodo = id => dispatch => (
   TodoAPIUtil.fetchTodo(id).then(todo => dispatch(receiveTodo(todo)))
 );
 
@@ -45,5 +45,5 @@ export const updateTodo = todo => dispatch => (
 );
 
 export const deleteTodo = todo => dispatch => (
-  TodoAPIUtil.destroyTodo(todo).then(todo => dispatch(removeTodo(todo)))
+  TodoAPIUtil.destroyTodo(todo).then(todo => dispatch(destroyTodo(todo)))
 );

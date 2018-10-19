@@ -1,10 +1,10 @@
 export const allTodos = (state) => {
-  //debugger
+  debugger
   return Object.values(state.todos);
 }
 
 export const allTodoLists = (state) => {
-  //debugger
+  debugger
   return Object.values(state.entities.todoLists);
 
 }
