@@ -1,40 +1,40 @@
 export const fetchTodoLists = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/todos'
+    url: 'api/todoLists'
   })
 );
 
 export const fetchTodoList = (id) => (
   $.ajax({
     method: 'GET',
-    url: `api/todos/${id}`
+    url: `api/todoLists/${id}`
   })
 );
 
 export const deleteTodoList = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/todos/${id}`
+    url: `api/todoLists/${id}`
   })
 );
 
-export const updateTodoList = (todo) => (
+export const updateTodoList = (todoList) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/todos/${todo.id}`,
+    url: `api/todoLists/${todoList.id}`,
     data: {
-      todo
+      todoList
     }
   })
 );
 
-export const createTodo = (todo) => (
+export const createTodoList = (todoList) => (
   $.ajax({
     method: 'POST',
-    url: 'api/todos',
+    url: 'api/todoLists',
     data: {
-      todo
+      todoList
     }
   })
 );

@@ -1,13 +1,8 @@
 import React from 'react';
-// Components
-import TodoListItem from './todo_list_item';
-import TodoForm from './todo_form';
 
 class TodoList extends React.Component {
   componentDidMount() {
-    debugger
     this.props.requestTodos();
-    debugger
   }
 
   render() {
@@ -28,7 +23,7 @@ class TodoList extends React.Component {
       <div>
         <TodoForm createTodo={ createTodo } errors={ errors }/>
         <ul className="todo-list">
-          { todoItems }
+          { allTodoItems }
         </ul>
       </div>
     );

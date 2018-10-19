@@ -1,7 +1,6 @@
 import React from 'react';
 // Components
 import TodoList from './todo_list';
-import TodoForm from './todo_form';
 
 class TodoListIndex extends React.Component {
   componentDidMount() {
